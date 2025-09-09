@@ -93,9 +93,12 @@ function updateDots() {
   allDots.forEach((dot) => {
     dot.classList.remove("slick-active");
   });
-  const dotIndex = currentIndex - 1;
+  let dotIndex = currentIndex - 1;
   if (currentIndex > originLength) {
     dotIndex = 0;
+  }
+  if (currentIndex === 0) {
+    dotIndex = originLength - 1;
   }
   const activeDot = allDots[dotIndex];
   if (activeDot) {
